@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/ranagit-ux/Helm.git
+        repoURL: https://github.com/ram-mishra/Helm-with-argocd-repo.git
         revision: main
         directories:
           - path: environment/*/frontend
@@ -17,14 +17,14 @@ spec:
       project: default
       sources:
         # Helm chart
-        - repoURL: https://github.com/ranagit-ux/Helm.git
+        - repoURL: https://github.com/ram-mishra/Helm-with-argocd-repo.git
           targetRevision: main
           path: charts/frontend
           helm:
             valueFiles:
               - '$values/{{path}}/values.yaml'
         # Same Git repository containing environment values
-        - repoURL: https://github.com/ranagit-ux/Helm.git
+        - repoURL: https://github.com/ram-mishra/Helm-with-argocd-repo.git
           targetRevision: main
           ref: values
       destination:
